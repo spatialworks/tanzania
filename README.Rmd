@@ -1,0 +1,57 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+```
+
+# tanzania: Datasets for Use in Designing Surveys in Tanzania
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Designing surveys require relevant datasets to be used as basis for sample size calculations, sampling design, survey planning/logistics and survey implementation. These include datasets on population, lists of sampling clusters, map datasets for spatial sampling, and previous survey datasets that can be used for estimating indicator variance and design effects. This package contains relevant datasets for use in designing surveys in Tanzania.
+
+## Installation
+
+The development version of the `tanzania` package can be installed from [GitHub](https://github.com/spatialworks/tanzania) with:
+
+```{r install, eval = FALSE}
+if(!require(remotes)) install.packages("remotes")
+remotes::install_github("spatialworks/tanzania")
+```
+
+## Usage
+
+When installing `tanzania`, geospatial packages on which `tanzania` depends on are also installed. To use `tanzania` package, it will be important to load these package dependencies that have been installed. This can be done by:
+
+```{r dependencies}
+library(rgdal)
+library(rgeos)
+library(raster)
+```
+
+### Region borders
+
+The Tanzania region borders is accessed via the region dataset.
+
+```{r region}
+tanzania::region
+```
+
+The region borders of Tanzania can be plotted by:
+
+```{r regionPlot}
+sp::plot(tanzania::region)
+```
+
+
