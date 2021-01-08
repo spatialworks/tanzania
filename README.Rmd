@@ -6,6 +6,9 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE,
+  error = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
@@ -51,7 +54,7 @@ tanzania::region
 
 The region borders of Tanzania can be plotted by:
 
-```{r regionPlot}
+```{r regionPlot, fig.align = "center"}
 sp::plot(tanzania::region)
 ```
 
