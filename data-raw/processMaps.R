@@ -3,6 +3,8 @@ library(rgeos)
 library(rgdal)
 library(raster)
 library(sf)
+library(magrittr)
+library(stringr)
 
 ## Read maps ###################################################################
 
@@ -13,25 +15,27 @@ usethis::use_data(livelihood_zone, overwrite = TRUE, compress = "xz")
 
 ## Region ----------------------------------------------------------------------
 region <- readOGR(dsn = "data-raw/GIS_Maps", layer = "Regions")
-region <- spTransform(x = region, CRSobj = CRS(proj4string(livelihood_zone)))
+region <- spTransform(x = region, CRSobj = CRS("+init=epsg:4326"))
 usethis::use_data(region, overwrite = TRUE, compress = "xz")
 
 ## District --------------------------------------------------------------------
 district <- readOGR(dsn = "data-raw/Districts_Shapefiles_2019",
                     layer = "Districts and TC as 2020")
-district <- spTransform(x = district, CRSobj = CRS(proj4string(livelihood_zone)))
 usethis::use_data(district, overwrite = TRUE, compress = "xz")
 
 ## Ward ------------------------------------------------------------------------
 ward <- readOGR(dsn = "data-raw/2012 Wards Shapefiles",
                 layer = "TZwards")
-ward <- spTransform(x = ward, CRSobj = CRS(proj4string(livelihood_zone)))
+ward <- spTransform(x = ward, CRSobj = CRS("+init=epsg:4326"))
 usethis::use_data(ward, overwrite = TRUE, compress = "xz")
 
 ## Village ---------------------------------------------------------------------
 village <- readOGR(dsn = "data-raw/2002/Tanzania_Village_EA_2002_region",
                    layer = "Tanzania_Village_EA_2002_region")
-village <- spTransform(x = village, CRSobj = CRS(proj4string(livelihood_zone)))
+village <- spTransform(x = village, CRSobj = CRS("+init=epsg:4326"))
+
+village$STREET <- village$STREET %>%
+  str_remove_all(pattern = "\xf4A\xf6|\xf4B\xf6|\xc6")
 usethis::use_data(village, overwrite = TRUE, compress = "xz")
 
 ## Global ruminant population --------------------------------------------------
