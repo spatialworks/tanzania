@@ -85,3 +85,43 @@
 #
 ################################################################################
 "village"
+
+
+################################################################################
+#
+#'
+#' Ruminant population in Tanzania
+#'
+#' @format A RasterLayer map
+#'
+#' @source Robinson, Timothy P.; Thornton, Philip; Franceschini, Gianluca;
+#'   Kruska, Russ; Chiozza, Federica; Notenbaert, An; Cecchi, Giuliano;
+#'   Herrero, Mario; Epprecht, Michael; Fritz, Steffen; You, Liang;
+#'   Conchedda, Giulia; See, Linda, 2018, "Global distribution of ruminant
+#'   livestock production systems V5 (5 minutes of arc)",
+#'   https://doi.org/10.7910/DVN/WPDSZE, Harvard Dataverse, V1
+#'
+#' @examples
+#' ruminant_population
+#'
+#
+################################################################################
+"ruminant_population"
+
+
+################################################################################
+#
+#'
+#' Livelihoods zones of Tanzania
+#'
+#' @format A SpatialPolygonsDataFrame with 80 features:
+#'
+#' @source https://fews.net/east-africa/tanzania/livelihood-zone-map/november-2009
+#'
+#' @examples
+#' livelihood_zone
+#'
+#
+################################################################################
+"livelihood_zone"
+
