@@ -2,11 +2,13 @@
 library(rgeos)
 library(rgdal)
 library(raster)
+library(sf)
 
 ## Read maps ###################################################################
 
 ## Livelihood zones ------------------------------------------------------------
 livelihood_zone <- readOGR(dsn = "data-raw/TZ_LHZ_2009", layer = "TZ_LHZ_2009")
+#livelihood_zone <- st_read(dsn = "data-raw/TZ_LHZ_2009", layer = "TZ_LHZ_2009")
 usethis::use_data(livelihood_zone, overwrite = TRUE, compress = "xz")
 
 ## Region ----------------------------------------------------------------------
