@@ -47,7 +47,7 @@ library(raster)
 
 ### Region borders
 
-The Tanzania region borders is accessed via the region dataset.
+The Tanzania region borders is accessed via the `region` dataset.
 
 ```{r region}
 tanzania::region
@@ -59,4 +59,59 @@ The region borders of Tanzania can be plotted by:
 sp::plot(tanzania::region)
 ```
 
+### District borders
+
+The Tanzania district borders is accessed via the `district` dataset.
+
+```{r district}
+tanzania::district
+```
+
+The district borders of Tanzania can be plotted by:
+
+```{r districtPlot, fig.align = "center"}
+sp::plot(tanzania::district)
+```
+
+### Ward borders
+
+The Tanzania ward borders is accessed via the `ward` dataset.
+
+```{r ward}
+tanzania::ward
+```
+
+The ward borders of Tanzania can be plotted by:
+
+```{r wardPlot, fig.align = "center"}
+sp::plot(tanzania::ward)
+```
+
+### Village borders
+
+The Tanzania village borders is accessed via the `village` dataset.
+
+```{r village}
+tanzania::village
+```
+
+The village borders of Tanzania can be plotted by:
+
+```{r villagePlot, fig.align = "center"}
+sp::plot(tanzania::village)
+```
+
+### Livelihood zones borders
+
+The Tanzania livelihood zone borders is accessed via the `livelihood_zone` dataset.
+
+```{r lhz}
+tanzania::livelihood_zone
+```
+
+The livelihood zone borders of Tanzania can be plotted by:
+
+```{r lhzPlot, fig.align = "center"}
+sp::plot(tanzania::livelihood_zone)
+```
 
