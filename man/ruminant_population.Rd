@@ -21,8 +21,4 @@ ruminant_population
 \description{
 Ruminant population in Tanzania
 }
-\examples{
-ruminant_population
-
-}
 \keyword{datasets}

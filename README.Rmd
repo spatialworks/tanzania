@@ -17,11 +17,13 @@ knitr::opts_chunk$set(
 
 ```
 
-# tanzania: Datasets for Use in Designing Surveys in Tanzania
+# tanzania: Datasets for Use in Designing Surveys in Tanzania <img src="man/figures/logo.svg" width="200px" align="center" />
 
 <!-- badges: start -->
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/spatialworks/tanzania/workflows/R-CMD-check/badge.svg)](https://github.com/spatialworks/tanzania/actions?query=workflow%3AR-CMD-check)
+[![CodeFactor](https://www.codefactor.io/repository/github/spatialworks/tanzania/badge)](https://www.codefactor.io/repository/github/spatialworks/tanzania)
 <!-- badges: end -->
 
 Designing surveys require relevant datasets to be used as basis for sample size calculations, sampling design, survey planning/logistics and survey implementation. These include datasets on population, lists of sampling clusters, map datasets for spatial sampling, and previous survey datasets that can be used for estimating indicator variance and design effects. This package contains relevant datasets for use in designing surveys in Tanzania.
@@ -40,8 +42,7 @@ remotes::install_github("spatialworks/tanzania")
 When installing `tanzania`, geospatial packages on which `tanzania` depends on are also installed. To use `tanzania` package, it will be important to load these package dependencies that have been installed. This can be done by:
 
 ```{r dependencies}
-library(rgdal)
-library(rgeos)
+library(sf)
 library(raster)
 ```
 
@@ -55,8 +56,8 @@ tanzania::region
 
 The region borders of Tanzania can be plotted by:
 
-```{r regionPlot, fig.align = "center"}
-sp::plot(tanzania::region)
+```{r regionPlot, fig.align = "center", fig.width = 10, fig.height = 10}
+plot(st_geometry(tanzania::region))
 ```
 
 ### District borders
@@ -69,8 +70,8 @@ tanzania::district
 
 The district borders of Tanzania can be plotted by:
 
-```{r districtPlot, fig.align = "center"}
-sp::plot(tanzania::district)
+```{r districtPlot, fig.align = "center", fig.width = 10, fig.height = 10}
+plot(st_geometry(tanzania::district))
 ```
 
 ### Ward borders
@@ -83,8 +84,8 @@ tanzania::ward
 
 The ward borders of Tanzania can be plotted by:
 
-```{r wardPlot, fig.align = "center"}
-sp::plot(tanzania::ward)
+```{r wardPlot, fig.align = "center", fig.width = 10, fig.height = 10}
+plot(st_geometry(tanzania::ward))
 ```
 
 ### Village borders
@@ -97,8 +98,8 @@ tanzania::village
 
 The village borders of Tanzania can be plotted by:
 
-```{r villagePlot, fig.align = "center"}
-sp::plot(tanzania::village)
+```{r villagePlot, fig.align = "center", fig.width = 10, fig.height = 10}
+plot(st_geometry(tanzania::village))
 ```
 
 ### Livelihood zones borders
@@ -111,7 +112,7 @@ tanzania::livelihood_zone
 
 The livelihood zone borders of Tanzania can be plotted by:
 
-```{r lhzPlot, fig.align = "center"}
-sp::plot(tanzania::livelihood_zone)
+```{r lhzPlot, fig.align = "center", fig.width = 10, fig.height = 10}
+plot(st_geometry(tanzania::livelihood_zone))
 ```
 

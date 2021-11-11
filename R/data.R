@@ -101,9 +101,6 @@
 #'   livestock production systems V5 (5 minutes of arc)",
 #'   https://doi.org/10.7910/DVN/WPDSZE, Harvard Dataverse, V1
 #'
-#' @examples
-#' ruminant_population
-#'
 #
 ################################################################################
 "ruminant_population"
